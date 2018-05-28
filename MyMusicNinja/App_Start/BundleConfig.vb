@@ -22,6 +22,13 @@ Public Module BundleConfig
         bundles.Add(New StyleBundle("~/Content/css").Include(
                   "~/Content/bootstrap.css",
                   "~/Content/site.css"))
+        ' Jquerry UI CSS and Java Script
+        bundles.Add(New ScriptBundle("~/bundles/jqueryui").Include(
+            "~/Scripts/jquery-ui-{version}.js"))
+
+        bundles.Add(New StyleBundle("~/Content/jqueryui").Include(
+            "~/Content/themes/base/all.css"))
+
     End Sub
 End Module
 
