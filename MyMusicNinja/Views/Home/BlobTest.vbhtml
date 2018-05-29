@@ -6,7 +6,7 @@ End Code
 <link rel="stylesheet" href="~/Content/jQuery.FileUpload/css/jquery.fileupload-ui.css">
 <br />
 <br />
-
+<h1>Drag and Drop Scanned Music to Upload or use add files Button.</h1>
 <!-- The file upload form used as target for the file upload widget -->
 <form id="fileupload" action="https://jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->

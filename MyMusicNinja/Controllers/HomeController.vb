@@ -40,8 +40,8 @@ Public Class HomeController
         Model.FileName = name
 
 
-        ViewBag.PeiceList = New SelectList(Dbconnect.PeicesList, "MusicPeiceId", "Title", "1")
-        ViewBag.PartList = New SelectList(Dbconnect.PartsList, "PartID", "PartName", "1")
+        ViewBag.PeiceList = New SelectList(Dbconnect.PeicesList, "MusicPeiceId", "Title", "")
+        ViewBag.PartList = New SelectList(Dbconnect.PartsList, "PartID", "PartName", "")
         Return View(Model)
     End Function
 
