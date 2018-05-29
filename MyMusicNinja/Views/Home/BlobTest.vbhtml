@@ -18,7 +18,7 @@ End Code
                 <span>Add files...</span>
                 <input type="file" name="files" multiple>
             </span>
-            <!--
+    <!--
     <button type="submit" class="btn btn-primary start">
         <i class="glyphicon glyphicon-upload"></i>
         <span>Start upload</span>
@@ -27,7 +27,7 @@ End Code
         <i class="glyphicon glyphicon-ban-circle"></i>
         <span>Cancel upload</span>
     </button>
-        -->
+    -->
             <button type="button" class="btn btn-danger delete">
                 <i class="glyphicon glyphicon-trash"></i>
                 <span>Delete</span>
@@ -47,7 +47,14 @@ End Code
         </div>
     </div>
     <!-- The table listing the files available for upload/download -->
-    <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+    <table role="presentation" class="table table-striped"><thead>
+           <tr>
+               <td>File</td>
+               <td>Size/Status</td>
+               <td style="text-align:right;">Actions</td>
+               <td style="text-align:center;">Mark for Delete</td>
+           </tr>
+           </thead><tbody class="files"></tbody></table>
 </form>
 
 
@@ -113,9 +120,6 @@ End Section
     {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
         <td>
-            <span class="preview"></span>
-        </td>
-        <td>
             <p class="name">{%=file.name%}</p>
             <strong class="error text-danger"></strong>
         </td>
@@ -159,18 +163,28 @@ End Section
         <td>
             <span class="size">{%=o.formatFileSize(file.size)%}</span>
         </td>
-        <td>
+        <td style="text-align:right;">
             {% if (file.deleteUrl) { %}
             <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}" {% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}' {% } %}>
                 <i class="glyphicon glyphicon-trash"></i>
                 <span>Delete</span>
             </button>
-            <input type="checkbox" name="delete" value="1" class="toggle">
             {% } else { %}
             <button class="btn btn-warning cancel">
                 <i class="glyphicon glyphicon-ban-circle"></i>
                 <span>Cancel</span>
             </button>
+            {% } %}
+            {% if (file.processurl) { %}
+            <button type="button" class="btn btn-success success" data-type="{%=file.processtype%}" data-url="{%=file.processurl%}" onclick="location.href='{%=file.processurl%}'"  >
+                <i class="glyphicon glyphicon-book"></i>
+                <span>Process</span>
+            </button>
+            {% } %}
+        </td>
+        <td style="text-align:center;">
+            {% if (file.deleteUrl) { %}
+            <input type="checkbox" name="delete" value="1" class="toggle">
             {% } %}
         </td>
     </tr>

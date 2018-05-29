@@ -1,0 +1,12 @@
+﻿
+How to Display a PDF INLINE
+
+
+<embed src="~/UploadedFiles/@Model.FileName" width="1200" height="700" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+
+
+Database Information
+mymusicninja.database.windows.net
+majianlord
+12
+

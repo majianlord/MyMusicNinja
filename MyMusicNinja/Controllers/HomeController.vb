@@ -26,13 +26,26 @@ Public Class HomeController
         Return View()
     End Function
 
-    Public Function GetFile(name As String)
+    Public Function GetFile(name As String) As ActionResult
         Dim folder = New DirectoryInfo(Server.MapPath("~/UploadedFiles/"))
         Dim file1 = folder.GetFiles(name).Single()
         Dim contentType = MimeMapping.GetMimeMapping(file1.Name)
         Return File(file1.FullName, contentType)
-
     End Function
+
+    Public Function Process(name As String) As ActionResult
+
+        Dim Dbconnect As New DatabaseActions()
+        Dim Model As New ProccessUploadModels
+        Model.FileName = name
+
+
+        ViewBag.PeiceList = New SelectList(Dbconnect.PeicesList, "MusicPeiceId", "Title", "1")
+        ViewBag.PartList = New SelectList(Dbconnect.PartsList, "PartID", "PartName", "1")
+        Return View(Model)
+    End Function
+
+
 
 
     Public Function DeleteFile(name As String)
@@ -62,12 +75,12 @@ Public Class HomeController
         Dim folder = New DirectoryInfo(Server.MapPath("~/UploadedFiles/"))
         Dim files = From file In folder.GetFiles().Where(Function(x) Not LCase(x.Name) = LCase("DONOTDELETE.txt"))
                     Where Filenames Is Nothing OrElse Filenames.Contains(file.Name, StringComparer.OrdinalIgnoreCase)
-                    Select New With {.deleteType = "POST", .name = file.Name, .size = file.Length,
+                    Select New With {.deleteType = "POST", .name = file.Name, .size = file.Length, .processtype = "GET",
                     .url = Url.Action("GetFile", "Home", New With {file.Name}),
+                    .processurl = Url.Action("Process", "Home", New With {file.Name}),
                     .deleteUrl = Url.Action("DeleteFile", "Home", New With {file.Name})}
 
         Return Json(New With {files}, JsonRequestBehavior.AllowGet)
-
     End Function
 
 
