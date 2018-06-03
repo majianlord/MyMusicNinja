@@ -71,7 +71,7 @@ End Code
 
     <script>
         var url = 'UploadFiles'
-        $(function () {
+        $(document).ready(function () {
             'use strict';
             // Change this to the location of your server-side upload handler:
             
@@ -81,6 +81,24 @@ End Code
                 autoUpload: true,
                 maxFileSize: 999000000,
             })
+
+            $('#fileupload').addClass('fileupload-processing');
+            $.ajax({
+                // Uncomment the following to send cross-domain cookies:
+                //xhrFields: {withCredentials: true},
+                url: url,
+                type: 'get',
+                dataType: 'json',
+                context: $('#fileupload')[0]
+            }).always(function () {
+                $(this).removeClass('fileupload-processing');
+            }).done(function (result) {
+                $(this).fileupload('option', 'done')
+                    .call(this, $.Event('done'), { result: result });
+            });
+
+
+
         });
         if ($.support.cors) {
             $.ajax({
@@ -92,22 +110,28 @@ End Code
                     new Date())
                     .appendTo('#fileupload');
             });
-        }
+        };
 
-        $('#fileupload').addClass('fileupload-processing');
-        $.ajax({
-            // Uncomment the following to send cross-domain cookies:
-            //xhrFields: {withCredentials: true},
-            url: url,
-            type: 'get',
-            dataType: 'json',
-            context: $('#fileupload')[0]
-        }).always(function () {
-            $(this).removeClass('fileupload-processing');
-        }).done(function (result) {
-            $(this).fileupload('option', 'done')
-                .call(this, $.Event('done'), { result: result });
-        });
+        function showPleaseWait() {
+            var modalLoading = '<div class="modal" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false role="dialog">\
+        <div class="modal-dialog">\
+            <div class="modal-content">\
+                <div class="modal-header">\
+                    <h4 class="modal-title">Please wait...</h4>\
+                </div>\
+                <div class="modal-body">\
+                    <div class="progress">\
+                      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"\
+                      aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%; height: 40px">\
+                      </div>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+    </div>';
+            $(document.body).append(modalLoading);
+            $("#pleaseWaitDialog").modal("show");
+        }
 
 
 

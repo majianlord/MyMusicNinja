@@ -25,7 +25,8 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("BlobTest", "BlobTest", "Home")</li>
+                    <li>@Html.ActionLink("Add Music", "BlobTest", "Home")</li>
+                    <li>@Html.ActionLink("View Music", "ShowPieceList", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
