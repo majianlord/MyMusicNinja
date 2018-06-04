@@ -76,14 +76,16 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(<Bind(Include:="Id,Title,SubTitle,Composer,Lyricist,Publisher,Publisher_Ref,ISBN,SchoolId,MusicTypeID")> ByVal musicPiece As MusicPiece) As ActionResult
+            Dim musicPiece1 As MusicPiece = db.MusicPieceModels.Find(musicPiece.Id)
+            UpdateModel(musicPiece1, includeProperties:=New String() {"ID", "Title", "SubTitle", "Composer", "Lyricist", "Publisher", "Publisher_Ref", "ISBN", "SchoolId", "MusicTypeID"})
             If ModelState.IsValid Then
-                db.Entry(musicPiece).State = EntityState.Modified
+                db.Entry(musicPiece1).State = EntityState.Modified
                 db.SaveChanges()
                 Return RedirectToAction("Index")
             End If
             ViewBag.MusicTypeID = New SelectList(db.MusicTypeModels, "ID", "MusicTypeName", musicPiece.MusicTypeID)
             ViewBag.SchoolId = New SelectList(db.SchoolModels, "ID", "SchoolName", musicPiece.SchoolId)
-            Return View(musicPiece)
+            Return View(musicPiece1)
         End Function
 
         ' GET: MusicPieces/Delete/5

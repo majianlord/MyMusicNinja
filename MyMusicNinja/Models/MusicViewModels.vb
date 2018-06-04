@@ -59,13 +59,13 @@ End Class
 
 
 
-Public Class MusicPiecesParts
-    Public Property MusicPiecePartID As Int64
-    Public Property MusicPiece As Int64
-    Public Property Part As Int64
-    Public Property PieceGUID As String
-    Public Property PiecePartGUID As String
-End Class
+'Public Class MusicPiecesParts
+'    Public Property MusicPiecePartID As Int64
+'    Public Property MusicPiece As Int64
+'    Public Property Part As Int64
+'    Public Property PieceGUID As String
+'    Public Property PiecePartGUID As String
+'End Class
 
 Public Class AzurePiecePart
     Public Property PiecePartID As String
