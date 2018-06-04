@@ -237,7 +237,15 @@
     <Compile Include="Classes\DatabaseActions.vb" />
     <Compile Include="Classes\NinjaSettings.vb" />
     <Compile Include="Controllers\AccountController.vb" />
+    <Compile Include="Controllers\CountryController.vb" />
+    <Compile Include="Controllers\DistrictController.vb" />
     <Compile Include="Controllers\ManageController.vb" />
+    <Compile Include="Controllers\MusicPartsController.vb" />
+    <Compile Include="Controllers\MusicPiecePartsController.vb" />
+    <Compile Include="Controllers\MusicPiecesController.vb" />
+    <Compile Include="Controllers\MusicTypesController.vb" />
+    <Compile Include="Controllers\SchoolController.vb" />
+    <Compile Include="Controllers\StateController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -245,11 +253,49 @@
       <DependentUpon>201806031459247_FirstLastSchool.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201806031459247_FirstLastSchool.vb" />
+    <Compile Include="Migrations\201806031515295_District.Designer.vb">
+      <DependentUpon>201806031515295_District.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806031515295_District.vb" />
+    <Compile Include="Migrations\201806031742566_addSchoolModel.Designer.vb">
+      <DependentUpon>201806031742566_addSchoolModel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806031742566_addSchoolModel.vb" />
+    <Compile Include="Migrations\201806031800590_UserToSchool.Designer.vb">
+      <DependentUpon>201806031800590_UserToSchool.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806031800590_UserToSchool.vb" />
+    <Compile Include="Migrations\201806031808404_SchoolManager.Designer.vb">
+      <DependentUpon>201806031808404_SchoolManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806031808404_SchoolManager.vb" />
+    <Compile Include="Migrations\201806031823413_DSSSMapping.Designer.vb">
+      <DependentUpon>201806031823413_DSSSMapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806031823413_DSSSMapping.vb" />
+    <Compile Include="Migrations\201806031837435_country.Designer.vb">
+      <DependentUpon>201806031837435_country.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806031837435_country.vb" />
+    <Compile Include="Migrations\201806031921126_MusicTypeMusicPart.Designer.vb">
+      <DependentUpon>201806031921126_MusicTypeMusicPart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806031921126_MusicTypeMusicPart.vb" />
+    <Compile Include="Migrations\201806032302230_MusicPiecesandParts.Designer.vb">
+      <DependentUpon>201806032302230_MusicPiecesandParts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806032302230_MusicPiecesandParts.vb" />
+    <Compile Include="Migrations\201806032315259_setupuniqee.Designer.vb">
+      <DependentUpon>201806032315259_setupuniqee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806032315259_setupuniqee.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\AccountViewModels.vb" />
     <Compile Include="Models\IdentityModels.vb" />
     <Compile Include="Models\ManageViewModels.vb" />
+    <Compile Include="Models\MusicModel.vb" />
     <Compile Include="Models\MusicViewModels.vb" />
+    <Compile Include="Models\SchoolModels.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -272,6 +318,33 @@
     <EmbeddedResource Include="Migrations\201806031459247_FirstLastSchool.resx">
       <DependentUpon>201806031459247_FirstLastSchool.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806031515295_District.resx">
+      <DependentUpon>201806031515295_District.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806031742566_addSchoolModel.resx">
+      <DependentUpon>201806031742566_addSchoolModel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806031800590_UserToSchool.resx">
+      <DependentUpon>201806031800590_UserToSchool.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806031808404_SchoolManager.resx">
+      <DependentUpon>201806031808404_SchoolManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806031823413_DSSSMapping.resx">
+      <DependentUpon>201806031823413_DSSSMapping.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806031837435_country.resx">
+      <DependentUpon>201806031837435_country.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806031921126_MusicTypeMusicPart.resx">
+      <DependentUpon>201806031921126_MusicTypeMusicPart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806032302230_MusicPiecesandParts.resx">
+      <DependentUpon>201806032302230_MusicPiecesandParts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806032315259_setupuniqee.resx">
+      <DependentUpon>201806032315259_setupuniqee.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -283,6 +356,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\bootstrap-select.css" />
+    <Content Include="Content\bootstrap-select.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -343,6 +418,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-select.css.map" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -354,10 +430,85 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap-select.js" />
+    <Content Include="Scripts\bootstrap-select.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Notes.txt" />
+    <Content Include="Scripts\bootstrap-select.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\i18n\defaults-ar_AR.js" />
+    <Content Include="Scripts\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Scripts\i18n\defaults-bg_BG.js" />
+    <Content Include="Scripts\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Scripts\i18n\defaults-cs_CZ.js" />
+    <Content Include="Scripts\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Scripts\i18n\defaults-da_DK.js" />
+    <Content Include="Scripts\i18n\defaults-da_DK.min.js" />
+    <Content Include="Scripts\i18n\defaults-de_DE.js" />
+    <Content Include="Scripts\i18n\defaults-de_DE.min.js" />
+    <Content Include="Scripts\i18n\defaults-en_US.js" />
+    <Content Include="Scripts\i18n\defaults-en_US.min.js" />
+    <Content Include="Scripts\i18n\defaults-es_CL.js" />
+    <Content Include="Scripts\i18n\defaults-es_CL.min.js" />
+    <Content Include="Scripts\i18n\defaults-es_ES.js" />
+    <Content Include="Scripts\i18n\defaults-es_ES.min.js" />
+    <Content Include="Scripts\i18n\defaults-et_EE.js" />
+    <Content Include="Scripts\i18n\defaults-et_EE.min.js" />
+    <Content Include="Scripts\i18n\defaults-eu.js" />
+    <Content Include="Scripts\i18n\defaults-eu.min.js" />
+    <Content Include="Scripts\i18n\defaults-fa_IR.js" />
+    <Content Include="Scripts\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Scripts\i18n\defaults-fi_FI.js" />
+    <Content Include="Scripts\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Scripts\i18n\defaults-fr_FR.js" />
+    <Content Include="Scripts\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Scripts\i18n\defaults-hr_HR.js" />
+    <Content Include="Scripts\i18n\defaults-hr_HR.min.js" />
+    <Content Include="Scripts\i18n\defaults-hu_HU.js" />
+    <Content Include="Scripts\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Scripts\i18n\defaults-id_ID.js" />
+    <Content Include="Scripts\i18n\defaults-id_ID.min.js" />
+    <Content Include="Scripts\i18n\defaults-it_IT.js" />
+    <Content Include="Scripts\i18n\defaults-it_IT.min.js" />
+    <Content Include="Scripts\i18n\defaults-ja_JP.js" />
+    <Content Include="Scripts\i18n\defaults-ja_JP.min.js" />
+    <Content Include="Scripts\i18n\defaults-kh_KM.js" />
+    <Content Include="Scripts\i18n\defaults-kh_KM.min.js" />
+    <Content Include="Scripts\i18n\defaults-ko_KR.js" />
+    <Content Include="Scripts\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Scripts\i18n\defaults-lt_LT.js" />
+    <Content Include="Scripts\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Scripts\i18n\defaults-nb_NO.js" />
+    <Content Include="Scripts\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Scripts\i18n\defaults-nl_NL.js" />
+    <Content Include="Scripts\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Scripts\i18n\defaults-pl_PL.js" />
+    <Content Include="Scripts\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Scripts\i18n\defaults-pt_BR.js" />
+    <Content Include="Scripts\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Scripts\i18n\defaults-pt_PT.js" />
+    <Content Include="Scripts\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Scripts\i18n\defaults-ro_RO.js" />
+    <Content Include="Scripts\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Scripts\i18n\defaults-ru_RU.js" />
+    <Content Include="Scripts\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Scripts\i18n\defaults-sk_SK.js" />
+    <Content Include="Scripts\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Scripts\i18n\defaults-sl_SI.js" />
+    <Content Include="Scripts\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Scripts\i18n\defaults-sv_SE.js" />
+    <Content Include="Scripts\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Scripts\i18n\defaults-tr_TR.js" />
+    <Content Include="Scripts\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Scripts\i18n\defaults-ua_UA.js" />
+    <Content Include="Scripts\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Scripts\i18n\defaults-vi_VN.js" />
+    <Content Include="Scripts\i18n\defaults-vi_VN.min.js" />
+    <Content Include="Scripts\i18n\defaults-zh_CN.js" />
+    <Content Include="Scripts\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Scripts\i18n\defaults-zh_TW.js" />
+    <Content Include="Scripts\i18n\defaults-zh_TW.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -414,6 +565,46 @@
     <Content Include="Views\Home\Process.vbhtml" />
     <Content Include="Views\Home\ShowPieceList.vbhtml" />
     <Content Include="Views\Home\PieceDetails.vbhtml" />
+    <Content Include="Views\State\Create.vbhtml" />
+    <Content Include="Views\State\Delete.vbhtml" />
+    <Content Include="Views\State\Details.vbhtml" />
+    <Content Include="Views\State\Edit.vbhtml" />
+    <Content Include="Views\State\Index.vbhtml" />
+    <Content Include="Views\MusicPieces\Create.vbhtml" />
+    <Content Include="Views\MusicPieces\Delete.vbhtml" />
+    <Content Include="Views\MusicPieces\Details.vbhtml" />
+    <Content Include="Views\MusicPieces\Edit.vbhtml" />
+    <Content Include="Views\MusicPieces\Index.vbhtml" />
+    <Content Include="Views\MusicPieceParts\Create.vbhtml" />
+    <Content Include="Views\MusicPieceParts\Delete.vbhtml" />
+    <Content Include="Views\MusicPieceParts\Details.vbhtml" />
+    <Content Include="Views\MusicPieceParts\Edit.vbhtml" />
+    <Content Include="Views\MusicPieceParts\Index.vbhtml" />
+    <Content Include="Views\Country\Create.vbhtml" />
+    <Content Include="Views\Country\Delete.vbhtml" />
+    <Content Include="Views\Country\Details.vbhtml" />
+    <Content Include="Views\Country\Edit.vbhtml" />
+    <Content Include="Views\Country\Index.vbhtml" />
+    <Content Include="Views\District\Create.vbhtml" />
+    <Content Include="Views\District\Delete.vbhtml" />
+    <Content Include="Views\District\Details.vbhtml" />
+    <Content Include="Views\District\Edit.vbhtml" />
+    <Content Include="Views\District\Index.vbhtml" />
+    <Content Include="Views\School\Create.vbhtml" />
+    <Content Include="Views\School\Delete.vbhtml" />
+    <Content Include="Views\School\Details.vbhtml" />
+    <Content Include="Views\School\Edit.vbhtml" />
+    <Content Include="Views\School\Index.vbhtml" />
+    <Content Include="Views\MusicTypes\Create.vbhtml" />
+    <Content Include="Views\MusicTypes\Delete.vbhtml" />
+    <Content Include="Views\MusicTypes\Details.vbhtml" />
+    <Content Include="Views\MusicTypes\Edit.vbhtml" />
+    <Content Include="Views\MusicTypes\Index.vbhtml" />
+    <Content Include="Views\MusicParts\Create.vbhtml" />
+    <Content Include="Views\MusicParts\Delete.vbhtml" />
+    <Content Include="Views\MusicParts\Details.vbhtml" />
+    <Content Include="Views\MusicParts\Edit.vbhtml" />
+    <Content Include="Views\MusicParts\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

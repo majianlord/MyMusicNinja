@@ -21,55 +21,42 @@ Public Class ProccessUploadModels
 
 End Class
 
-Public Class PiecesParts
-    Public Property PartID As Int64
-    Public Property PartName As String
-End Class
+'Public Class PiecesParts
+'    Public Property PartID As Int64
+'    Public Property PartName As String
+'End Class
 
-Public Class PiecesType
-    Public Property TypeID As Int64
-    Public Property TypeName As String
-End Class
-
-
-Public Class MusicPieces
-    Public Property MusicPieceId As Int64
-    Public Property Title As String
-    Public Property SubTitle As String
-    Public Property Composer As String
-    Public Property Lyricist As String
-    Public Property Publisher As String
-    Public Property Publisher_Ref As String
-    Public Property ISBN As String
-    Public Property Owner As String
-    Public Property GUID As String
-    Public Property Parts As List(Of MusicPieces_Parts)
-
-    Public Property PieceType As MusicType
-
-End Class
-
-Public Class MusicPieces_Parts
-    Public Property MusicPiecePartID As Int64
-    Public Property MusicPiece As Int64
-    Public Property Part As MusicPart
-    Public Property Page As Int64
-    Public Property FileName As String
-    Public Property PiecePartGUID As String
-End Class
+'Public Class PiecesType
+'    Public Property TypeID As Int64
+'    Public Property TypeName As String
+'End Class
 
 
+'Public Class MusicPieces
+'    Public Property MusicPieceId As Int64
+'    Public Property Title As String
+'    Public Property SubTitle As String
+'    Public Property Composer As String
+'    Public Property Lyricist As String
+'    Public Property Publisher As String
+'    Public Property Publisher_Ref As String
+'    Public Property ISBN As String
+'    Public Property Owner As String
+'    Public Property GUID As String
+'    Public Property Parts As List(Of MusicPieces_Parts)
+'    Public Property PieceType As MusicType
+'End Class
 
-Public Class MusicType
-    Public Property TypeName As String
-    Public Property TypeId As Int64
-End Class
+'Public Class MusicPieces_Parts
+'    Public Property MusicPiecePartID As Int64
+'    Public Property MusicPiece As Int64
+'    Public Property Part As MusicPart
+'    Public Property Page As Int64
+'    Public Property FileName As String
+'    Public Property PiecePartGUID As String
+'End Class
 
 
-Public Class MusicPart
-    Public Property PartName As String
-    Public Property PartID As Int64
-End Class
 
 
 Public Class MusicPiecesParts

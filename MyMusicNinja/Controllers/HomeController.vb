@@ -35,25 +35,25 @@ Public Class HomeController
 
     <HttpPost>
     Public Function AddPart(PartName As String) As ActionResult
-        Dim Dbconnect As New DatabaseActions()
-        If Dbconnect.AddtoPartsList(PartName) = False Then
-            Return Json($"{PartName} we not added due to an error.  Please try again")
-        Else
-            Dim Result As List(Of PiecesParts) = Dbconnect.PartsList
-            Return Json(Result)
-        End If
+        'Dim Dbconnect As New DatabaseActions()
+        'If Dbconnect.AddtoPartsList(PartName) = False Then
+        '    Return Json($"{PartName} we not added due to an error.  Please try again")
+        'Else
+        '    Dim Result As List(Of PiecesParts) = Dbconnect.PartsList
+        '    Return Json(Result)
+        'End If
     End Function
 
     Public Function AddPiecePart(pieceID As Int64, partID As Int64, pageNum As Int64, fileName As String) As ActionResult
-        Dim dBconnect As New DatabaseActions()
-        Dim mimeType As String = MimeMapping.GetMimeMapping(fileName)
-        Dim blobGuid As String = Guid.NewGuid().ToString + Path.GetExtension(fileName)
-        Dim piecePartID As Int64 = dBconnect.AddPiecesParts(pieceID, partID, pageNum, fileName, blobGuid, mimeType)
-        Dim azureInfo As AzurePiecePart = dBconnect.AzureStorageID(piecePartID)
-        Dim azz As New AzureBase
-        Dim folder = Server.MapPath("~/UploadedFiles/")
-        azz.CreateAzureBlob(azureinfo, folder)
-        Return Json("Success")
+        'Dim dBconnect As New DatabaseActions()
+        'Dim mimeType As String = MimeMapping.GetMimeMapping(fileName)
+        'Dim blobGuid As String = Guid.NewGuid().ToString + Path.GetExtension(fileName)
+        'Dim piecePartID As Int64 = dBconnect.AddPiecesParts(pieceID, partID, pageNum, fileName, blobGuid, mimeType)
+        'Dim azureInfo As AzurePiecePart = dBconnect.AzureStorageID(piecePartID)
+        'Dim azz As New AzureBase
+        'Dim folder = Server.MapPath("~/UploadedFiles/")
+        'azz.CreateAzureBlob(azureinfo, folder)
+        'Return Json("Success")
     End Function
 
 
@@ -61,34 +61,34 @@ Public Class HomeController
 
     <HttpPost>
     Public Function AddPiece(PieceTitle As String, SubTitle As String, Composer As String, Lyricist As String, Publisher As String, Publisher_REF As String, ISBN As String, ptype As Int64) As ActionResult
-        Dim Dbconnect As New DatabaseActions()
-        'Need to get the right ownerID once we wire up proper ownership fo the system
-        If Dbconnect.addPiece(PieceTitle, SubTitle, Composer, Lyricist, Publisher, Publisher_REF, ISBN, 1, ptype) = True Then
-            Dim Result As List(Of MusicPieces) = Dbconnect.PiecesListDropDown
-            Return Json(Result)
-        Else
-            Return Json("Error while trying to add new Piece Please try again")
-        End If
+        'Dim Dbconnect As New DatabaseActions()
+        ''Need to get the right ownerID once we wire up proper ownership fo the system
+        'If Dbconnect.addPiece(PieceTitle, SubTitle, Composer, Lyricist, Publisher, Publisher_REF, ISBN, 1, ptype) = True Then
+        '    Dim Result As List(Of MusicPieces) = Dbconnect.PiecesListDropDown
+        '    Return Json(Result)
+        'Else
+        '    Return Json("Error while trying to add new Piece Please try again")
+        'End If
     End Function
 
 
 
 
     Public Function PiecesTypes() As ActionResult
-        Dim Dbconnect As New DatabaseActions()
-        Dim Result As List(Of PiecesType) = Dbconnect.TypeList
-        Return Json(Result, JsonRequestBehavior.AllowGet)
+        'Dim Dbconnect As New DatabaseActions()
+        'Dim Result As List(Of PiecesType) = Dbconnect.TypeList
+        'Return Json(Result, JsonRequestBehavior.AllowGet)
     End Function
 
 
 
     Public Function Process(name As String) As ActionResult
-        Dim Dbconnect As New DatabaseActions()
-        Dim Model As New ProccessUploadModels
-        Model.FileName = name
-        ViewBag.PieceList = New SelectList(Dbconnect.PiecesListDropDown, "MusicPieceId", "Title", "0")
-        ViewBag.PartList = New SelectList(Dbconnect.PartsList, "PartID", "PartName", "0")
-        Return View(Model)
+        'Dim Dbconnect As New DatabaseActions()
+        'Dim Model As New ProccessUploadModels
+        'Model.FileName = name
+        'ViewBag.PieceList = New SelectList(Dbconnect.PiecesListDropDown, "MusicPieceId", "Title", "0")
+        'ViewBag.PartList = New SelectList(Dbconnect.PartsList, "PartID", "PartName", "0")
+        'Return View(Model)
     End Function
 
     Public Function DeleteFile(name As String)
@@ -125,15 +125,15 @@ Public Class HomeController
 
 
     Public Function ShowPieceList() As ActionResult
-        Dim Dbconnect As New DatabaseActions()
-        Dim result = Dbconnect.PiecesListFull(1)
-        Return View(result)
+        'Dim Dbconnect As New DatabaseActions()
+        'Dim result = Dbconnect.PiecesListFull(1)
+        'Return View(result)
     End Function
 
     Public Function PieceDetails(pieceID As Int64) As ActionResult
-        Dim Dbconnect As New DatabaseActions()
-        Dim result = Dbconnect.PiecesDetails(pieceID)
-        Return View(result)
+        'Dim Dbconnect As New DatabaseActions()
+        'Dim result = Dbconnect.PiecesDetails(pieceID)
+        'Return View(result)
     End Function
 
     ''' <summary>

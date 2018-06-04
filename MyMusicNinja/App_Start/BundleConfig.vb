@@ -17,12 +17,14 @@ Public Module BundleConfig
 
         bundles.Add(New ScriptBundle("~/bundles/bootstrap").Include(
                   "~/Scripts/bootstrap.js",
-                  "~/Scripts/respond.js"))
+                  "~/Scripts/respond.js",
+                  "~/Scripts/bootstrap-select.js"))
 
         bundles.Add(New StyleBundle("~/Content/css").Include(
                   "~/Content/bootstrap.css",
+                  "~/Content/bootstrap-select.css",
                   "~/Content/site.css"))
-        ' Jquerry UI CSS and Java Script
+        ' Jquery UI CSS and Java Script
         bundles.Add(New ScriptBundle("~/bundles/jqueryui").Include(
             "~/Scripts/jquery-ui-{version}.js"))
 

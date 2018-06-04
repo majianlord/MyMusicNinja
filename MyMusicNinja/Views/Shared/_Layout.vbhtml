@@ -27,6 +27,18 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Add Music", "BlobTest", "Home")</li>
                     <li>@Html.ActionLink("View Music", "ShowPieceList", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Functions<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("View State", "index", "State")</li>
+                            <li>@Html.ActionLink("View District", "index", "District")</li>
+                            <li>@Html.ActionLink("View School", "index", "School")</li>
+                            <li>@Html.ActionLink("View Parts", "index", "MusicParts")</li>
+                            <li>@Html.ActionLink("View Types", "index", "MusicTypes")</li>
+                            <li>@Html.ActionLink("View Pieces", "index", "MusicPieces")</li>
+                            <li>@Html.ActionLink("View Piece Parts", "index", "MusicPieceParts")</li>
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
