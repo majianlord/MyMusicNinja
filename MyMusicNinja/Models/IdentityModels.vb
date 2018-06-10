@@ -10,20 +10,16 @@ Public Class ApplicationUser
     Inherits IdentityUser
     Public Sub New()
         Me.Schools = New HashSet(Of SchoolModel)()
-        Me.ManagedDistricts = New HashSet(Of DistrictModel)()
-
+        Me.ManagedSchools = New HashSet(Of SchoolModel)()
+        Me.PendingApplications = New HashSet(Of SchoolApplication)()
     End Sub
     Public Property FirstName As String
     Public Property LastName As String
     Public Property EmailAddress As String
     Public Property ContactPhoneNumber As String
-
     Public Overridable Property Schools As ICollection(Of SchoolModel)
     Public Overridable Property ManagedSchools As ICollection(Of SchoolModel)
-    Public Overridable Property ManagedDistricts As ICollection(Of DistrictModel)
-
-    ' Public Property ManagedSchools As List(Of SchoolModel)
-
+    Public Overridable Property PendingApplications As ICollection(Of SchoolApplication)
 
 
     Public Async Function GenerateUserIdentityAsync(manager As UserManager(Of ApplicationUser)) As Task(Of ClaimsIdentity)
@@ -52,5 +48,9 @@ Public Class ApplicationDbContext
     Public Property MusicTypeModels As System.Data.Entity.DbSet(Of MusicType)
     Public Property MusicPieceModels As System.Data.Entity.DbSet(Of MusicPiece)
     Public Property MusicPiecePartModels As System.Data.Entity.DbSet(Of MusicPiecePart)
+
+    Public Property SchoolApplications As System.Data.Entity.DbSet(Of SchoolApplication)
+
+
 
 End Class

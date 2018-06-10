@@ -26,6 +26,7 @@ Namespace Controllers
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
             Dim districtModel As DistrictModel = db.DistrictModels.Find(id)
+
             If IsNothing(districtModel) Then
                 Return HttpNotFound()
             End If

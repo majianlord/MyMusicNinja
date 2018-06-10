@@ -1,19 +1,46 @@
 ﻿Imports System.ComponentModel.DataAnnotations
 Imports System.ComponentModel.DataAnnotations.Schema
 
-''' <summary>
-''' 	User to School Mapping Could be 1 to Many
-''' </summary>
-Public Class UserToSchool
-    Public Property id As Long
-    Public Property School As SchoolModel
-    Public Property User As ApplicationUser
+
+Public Class SchoolApplication
+    Public Property ID As Long
+    Public Property Requestinfo As String
+    Public Property RequestedRole As SchoolRole
+    Public Property Status As ApplicationStatus
+    Public Property StatusReason As String
+    Public Property ApprovedbyID As Long?
+    Public Overridable Property ApprovebyUser As ApplicationUser
+    Public Property ApplicationUserID As String
+    Public Overridable Property ApplicationUser As ApplicationUser
+    Public Property SchoolID As Long?
+    Public Overridable Property School As SchoolModel
+
+    Public Enum ApplicationStatus
+        Submitted = 1
+        Reviewed = 2
+        Approved = 3
+        Rejected = 4
+        Canceled = 4
+    End Enum
+
+    Public Enum SchoolRole
+        User = 1
+        Manager = 2
+    End Enum
+
 End Class
+
+
+
+
+
 
 
 Public Class SchoolModel
     Public Sub New()
         Me.AssignedUsers = New HashSet(Of ApplicationUser)()
+        Me.ManagingUsers = New HashSet(Of ApplicationUser)()
+        Me.PendingApplications = New HashSet(Of SchoolApplication)()
     End Sub
     <Key(), DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property ID As Long
@@ -32,8 +59,11 @@ Public Class SchoolModel
     Public Property CountryID As Long?
     Public Overridable Property Country As CountryModel
     Public Property CareOff As String
+    <InverseProperty("Schools")>
     Public Overridable Property AssignedUsers As ICollection(Of ApplicationUser)
-
+    <InverseProperty("ManagedSchools")>
+    Public Overridable Property ManagingUsers As ICollection(Of ApplicationUser)
+    Public Overridable Property PendingApplications As ICollection(Of SchoolApplication)
 End Class
 Public Class DistrictModel
     <Key(), DatabaseGenerated(DatabaseGeneratedOption.Identity)>
@@ -44,6 +74,7 @@ Public Class DistrictModel
     Public Property DistrictName As String
     Public Property StateID As Long?
     Public Overridable Property State As StateModel
+
 End Class
 
 Public Class StateModel

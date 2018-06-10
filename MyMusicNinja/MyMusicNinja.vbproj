@@ -294,6 +294,18 @@
       <DependentUpon>201806101330094_ManytoManySchoolToUser.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201806101330094_ManytoManySchoolToUser.vb" />
+    <Compile Include="Migrations\201806101429220_AddManagingUsers.Designer.vb">
+      <DependentUpon>201806101429220_AddManagingUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806101429220_AddManagingUsers.vb" />
+    <Compile Include="Migrations\201806101629176_UsertoSchoolApplications.Designer.vb">
+      <DependentUpon>201806101629176_UsertoSchoolApplications.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806101629176_UsertoSchoolApplications.vb" />
+    <Compile Include="Migrations\201806101632218_UsertoSchoolApplicationsV2.Designer.vb">
+      <DependentUpon>201806101632218_UsertoSchoolApplicationsV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806101632218_UsertoSchoolApplicationsV2.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\AccountViewModels.vb" />
     <Compile Include="Models\IdentityModels.vb" />
@@ -352,6 +364,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806101330094_ManytoManySchoolToUser.resx">
       <DependentUpon>201806101330094_ManytoManySchoolToUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101429220_AddManagingUsers.resx">
+      <DependentUpon>201806101429220_AddManagingUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101629176_UsertoSchoolApplications.resx">
+      <DependentUpon>201806101629176_UsertoSchoolApplications.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101632218_UsertoSchoolApplicationsV2.resx">
+      <DependentUpon>201806101632218_UsertoSchoolApplicationsV2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
