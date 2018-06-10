@@ -43,6 +43,9 @@ Public Class MusicPiece
     Public Overridable Property MusicType As MusicType
 End Class
 
+''' <summary>
+''' 	
+''' </summary>
 Public Class MusicPiecePart
     Public Property ID As Long
     <Required>

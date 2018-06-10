@@ -235,6 +235,7 @@
     <Compile Include="App_Start\WebApiConfig.vb" />
     <Compile Include="Classes\AzureBase.vb" />
     <Compile Include="Classes\DatabaseActions.vb" />
+    <Compile Include="Classes\Helpers.vb" />
     <Compile Include="Classes\NinjaSettings.vb" />
     <Compile Include="Controllers\AccountController.vb" />
     <Compile Include="Controllers\CountryController.vb" />
@@ -289,6 +290,10 @@
       <DependentUpon>201806032315259_setupuniqee.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201806032315259_setupuniqee.vb" />
+    <Compile Include="Migrations\201806101330094_ManytoManySchoolToUser.Designer.vb">
+      <DependentUpon>201806101330094_ManytoManySchoolToUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806101330094_ManytoManySchoolToUser.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\AccountViewModels.vb" />
     <Compile Include="Models\IdentityModels.vb" />
@@ -344,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806032315259_setupuniqee.resx">
       <DependentUpon>201806032315259_setupuniqee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101330094_ManytoManySchoolToUser.resx">
+      <DependentUpon>201806101330094_ManytoManySchoolToUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -606,6 +614,7 @@
     <Content Include="Views\MusicParts\Details.vbhtml" />
     <Content Include="Views\MusicParts\Edit.vbhtml" />
     <Content Include="Views\MusicParts\Index.vbhtml" />
+    <Content Include="Views\Home\Privacy.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

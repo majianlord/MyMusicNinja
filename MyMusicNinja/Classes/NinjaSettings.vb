@@ -1,6 +1,8 @@
 ﻿Public Class NinjaSettings
     Private _EFDatabaseConnection As String
     Private _DatabaseConnection As String
+    Private _EmailPassword As String
+    Private _EmailUserName As String
 
     Public Property EFDatabaseConnection As String
         Get
@@ -43,5 +45,38 @@
             ConfigurationManager.RefreshSection("appSettings")
         End Set
     End Property
+
+
+
+
+    Public Property EmailPassword As String
+        Get
+            If String.IsNullOrEmpty(_DatabaseConnection) Then
+                _EmailPassword = ConfigurationManager.AppSettings.Item("EmailPassword")
+            End If
+            Return _EmailPassword
+        End Get
+        Set
+            _EmailPassword = Value
+            ConfigurationManager.AppSettings.Item("EmailPassword") = _EmailPassword
+            ConfigurationManager.RefreshSection("appSettings")
+        End Set
+    End Property
+
+    Public Property EmailUserName As String
+        Get
+            If String.IsNullOrEmpty(_DatabaseConnection) Then
+                _EmailUserName = ConfigurationManager.AppSettings.Item("EmailUserName")
+            End If
+            Return _EmailUserName
+        End Get
+        Set
+            _EmailUserName = Value
+            ConfigurationManager.AppSettings.Item("EmailUserName") = _EmailUserName
+            ConfigurationManager.RefreshSection("appSettings")
+        End Set
+    End Property
+
+
 
 End Class

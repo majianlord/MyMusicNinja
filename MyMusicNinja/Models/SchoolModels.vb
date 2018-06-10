@@ -12,6 +12,9 @@ End Class
 
 
 Public Class SchoolModel
+    Public Sub New()
+        Me.AssignedUsers = New HashSet(Of ApplicationUser)()
+    End Sub
     <Key(), DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property ID As Long
     <Index(IsUnique:=True)>
@@ -29,7 +32,7 @@ Public Class SchoolModel
     Public Property CountryID As Long?
     Public Overridable Property Country As CountryModel
     Public Property CareOff As String
-    Public Property Users As List(Of UserToSchool)
+    Public Overridable Property AssignedUsers As ICollection(Of ApplicationUser)
 
 End Class
 Public Class DistrictModel

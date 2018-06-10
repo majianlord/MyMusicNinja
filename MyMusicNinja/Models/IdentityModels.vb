@@ -8,13 +8,21 @@ Imports System.ComponentModel.DataAnnotations.Schema
 ' You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
 Public Class ApplicationUser
     Inherits IdentityUser
+    Public Sub New()
+        Me.Schools = New HashSet(Of SchoolModel)()
+        Me.ManagedDistricts = New HashSet(Of DistrictModel)()
 
+    End Sub
     Public Property FirstName As String
     Public Property LastName As String
+    Public Property EmailAddress As String
+    Public Property ContactPhoneNumber As String
 
-    Public Property Schools As List(Of UserToSchool)
+    Public Overridable Property Schools As ICollection(Of SchoolModel)
+    Public Overridable Property ManagedSchools As ICollection(Of SchoolModel)
+    Public Overridable Property ManagedDistricts As ICollection(Of DistrictModel)
 
-    Public Property ManagedSchools As List(Of SchoolModel)
+    ' Public Property ManagedSchools As List(Of SchoolModel)
 
 
 
@@ -42,7 +50,7 @@ Public Class ApplicationDbContext
     Public Property CountryModels As System.Data.Entity.DbSet(Of CountryModel)
     Public Property MusicPartModels As System.Data.Entity.DbSet(Of MusicPart)
     Public Property MusicTypeModels As System.Data.Entity.DbSet(Of MusicType)
-
     Public Property MusicPieceModels As System.Data.Entity.DbSet(Of MusicPiece)
     Public Property MusicPiecePartModels As System.Data.Entity.DbSet(Of MusicPiecePart)
+
 End Class
