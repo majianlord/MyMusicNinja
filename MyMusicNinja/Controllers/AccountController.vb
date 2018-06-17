@@ -131,6 +131,9 @@ Public Class AccountController
     Public Async Function Register(model As RegisterViewModel) As Task(Of ActionResult)
         If ModelState.IsValid Then
             Dim user = New ApplicationUser() With {
+                .PhoneNumber = model.PhoneNumber,
+                .FirstName = model.FirstName,
+                .LastName = model.LastName,
                 .UserName = model.Email,
                 .Email = model.Email
             }
@@ -371,6 +374,16 @@ Public Class AccountController
     <AllowAnonymous>
     Public Function ExternalLoginFailure() As ActionResult
         Return View()
+    End Function
+
+
+
+    '
+    ' GET: /Account/ExternalLoginFailure
+    <AllowAnonymous>
+    Public Function EditProfile() As ActionResult
+        Dim user As MyMusicNinja.ApplicationUser = System.Web.HttpContext.Current.GetOwinContext().GetUserManager(Of ApplicationUserManager)().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId())
+        Return View(user)
     End Function
 
     Protected Overrides Sub Dispose(disposing As Boolean)

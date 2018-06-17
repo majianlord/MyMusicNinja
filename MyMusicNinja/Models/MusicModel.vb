@@ -23,6 +23,42 @@ Public Class MusicPart
 End Class
 
 
+Public Class MusicBooks
+    Public Property Id As Long
+    <Required>
+    Public Property Title As String
+    Public Property SubTitle As String
+    Public Property Composer As String
+    Public Property Lyricist As String
+    Public Property Publisher As String
+    Public Property Publisher_Ref As String
+    Public Property ISBN As String
+    Public Property LibraryId As Long?
+    Public Overridable Property Library As Library
+    Public Property AzureContainerID As String
+    Public Overridable Property Parts As List(Of MusicBookPart)
+    <Required>
+    <Display(Name:="Music Type")>
+    Public Property MusicTypeID As Long?
+    Public Overridable Property MusicType As MusicType
+End Class
+
+Public Class MusicBookPart
+    Public Property ID As Long
+    <Required>
+    Public Property MusicBooksID As Long?
+    Public Overridable Property MusicBook As MusicBooks
+    Public Property PartID As Long?
+    Public Overridable Property Part As MusicPart
+    Public Property Page As Long
+    Public Property FileName As String
+    Public Property FileMimeType As String
+    Public Property AzureContainerID As String
+    Public Property AzureBLOBID As String
+
+End Class
+
+
 Public Class MusicPiece
     Public Property Id As Long
     <Required>

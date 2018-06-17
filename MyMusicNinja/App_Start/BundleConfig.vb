@@ -23,7 +23,8 @@ Public Module BundleConfig
         bundles.Add(New StyleBundle("~/Content/css").Include(
                   "~/Content/bootstrap.css",
                   "~/Content/bootstrap-select.css",
-                  "~/Content/site.css"))
+                  "~/Content/site.css",
+                  "~/Content/Style.css"))
         ' Jquery UI CSS and Java Script
         bundles.Add(New ScriptBundle("~/bundles/jqueryui").Include(
             "~/Scripts/jquery-ui-{version}.js"))

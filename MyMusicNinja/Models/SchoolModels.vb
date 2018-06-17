@@ -5,8 +5,8 @@ Imports System.ComponentModel.DataAnnotations.Schema
 Public Class SchoolApplication
     Public Property ID As Long
     Public Property Requestinfo As String
-    Public Property RequestedRole As SchoolRole
-    Public Property Status As ApplicationStatus
+    Public Property RequestedRole As NinjaEnums.SchoolRole
+    Public Property Status As NinjaEnums.SchoolApplicationStatus
     Public Property StatusReason As String
     Public Property ApprovedbyID As Long?
     Public Overridable Property ApprovebyUser As ApplicationUser
@@ -15,22 +15,21 @@ Public Class SchoolApplication
     Public Property SchoolID As Long?
     Public Overridable Property School As SchoolModel
 
-    Public Enum ApplicationStatus
-        Submitted = 1
-        Reviewed = 2
-        Approved = 3
-        Rejected = 4
-        Canceled = 4
-    End Enum
 
-    Public Enum SchoolRole
-        User = 1
-        Manager = 2
-    End Enum
 
 End Class
 
+Public Class Library
+    Public Property ID As Long
+    Public Property LibraryName As String
 
+    Public Property SchoolID As Long?
+    Public Overridable Property School As SchoolModel
+
+    Public Overridable Property MusicPieces As List(Of MusicPiece)
+
+    Public Overridable Property MusicBooks As List(Of MusicBooks)
+End Class
 
 
 
@@ -64,6 +63,8 @@ Public Class SchoolModel
     <InverseProperty("ManagedSchools")>
     Public Overridable Property ManagingUsers As ICollection(Of ApplicationUser)
     Public Overridable Property PendingApplications As ICollection(Of SchoolApplication)
+
+    Public Overridable Property Libraries As ICollection(Of Library)
 End Class
 Public Class DistrictModel
     <Key(), DatabaseGenerated(DatabaseGeneratedOption.Identity)>

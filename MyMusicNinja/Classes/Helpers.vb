@@ -1,6 +1,6 @@
 ﻿Imports System.Net.Mail
 
-Public Class Helpers
+Public Class NinjaHelpers
     Public IsError As Boolean = False
     Public IsErrorString As String = ""
     Public Function sendEmail(MailTo As String, MailFrom As String, MailSubject As String, MailBody As String, Optional MailHTML As Boolean = False) As NinjaResults

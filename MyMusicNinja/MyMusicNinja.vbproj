@@ -236,10 +236,12 @@
     <Compile Include="Classes\AzureBase.vb" />
     <Compile Include="Classes\DatabaseActions.vb" />
     <Compile Include="Classes\Helpers.vb" />
+    <Compile Include="Classes\NinjaEnums.vb" />
     <Compile Include="Classes\NinjaSettings.vb" />
     <Compile Include="Controllers\AccountController.vb" />
     <Compile Include="Controllers\CountryController.vb" />
     <Compile Include="Controllers\DistrictController.vb" />
+    <Compile Include="Controllers\LibrariesController.vb" />
     <Compile Include="Controllers\ManageController.vb" />
     <Compile Include="Controllers\MusicPartsController.vb" />
     <Compile Include="Controllers\MusicPiecePartsController.vb" />
@@ -306,6 +308,10 @@
       <DependentUpon>201806101632218_UsertoSchoolApplicationsV2.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201806101632218_UsertoSchoolApplicationsV2.vb" />
+    <Compile Include="Migrations\201806101646255_AddLibrarysandBooks.Designer.vb">
+      <DependentUpon>201806101646255_AddLibrarysandBooks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806101646255_AddLibrarysandBooks.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\AccountViewModels.vb" />
     <Compile Include="Models\IdentityModels.vb" />
@@ -374,6 +380,9 @@
     <EmbeddedResource Include="Migrations\201806101632218_UsertoSchoolApplicationsV2.resx">
       <DependentUpon>201806101632218_UsertoSchoolApplicationsV2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101646255_AddLibrarysandBooks.resx">
+      <DependentUpon>201806101646255_AddLibrarysandBooks.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -391,6 +400,55 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\abt-bg-top.jpg" />
+    <Content Include="Content\images\abt-img.jpg" />
+    <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\bg-add.png" />
+    <Content Include="Content\images\bg-vision-sec.jpg" />
+    <Content Include="Content\images\call-icon.png" />
+    <Content Include="Content\images\fb--icon.png" />
+    <Content Include="Content\images\icon-abt-1.png" />
+    <Content Include="Content\images\icon-abt-2.png" />
+    <Content Include="Content\images\icon-abt-3.png" />
+    <Content Include="Content\images\lib-bg-top.jpg" />
+    <Content Include="Content\images\lib-img-1.jpg" />
+    <Content Include="Content\images\lib-img-2.jpg" />
+    <Content Include="Content\images\lib-img-3.jpg" />
+    <Content Include="Content\images\lib-img-4.jpg" />
+    <Content Include="Content\images\libraries-images.jpg" />
+    <Content Include="Content\images\libraries-images2.jpg" />
+    <Content Include="Content\images\libraries-images3.jpg" />
+    <Content Include="Content\images\libraries-images4.jpg" />
+    <Content Include="Content\images\libraries-images5.jpg" />
+    <Content Include="Content\images\libraries-images6.jpg" />
+    <Content Include="Content\images\login-icon-hover.png" />
+    <Content Include="Content\images\login-icon.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\mail-icon.png" />
+    <Content Include="Content\images\mobile-icon.png" />
+    <Content Include="Content\images\name-icon.png" />
+    <Content Include="Content\images\plus-b.png" />
+    <Content Include="Content\images\ser-bg-top.jpg" />
+    <Content Include="Content\images\service-1.jpg" />
+    <Content Include="Content\images\service-2.jpg" />
+    <Content Include="Content\images\service-3.jpg" />
+    <Content Include="Content\images\service-4.jpg" />
+    <Content Include="Content\images\service-5.jpg" />
+    <Content Include="Content\images\service-6.jpg" />
+    <Content Include="Content\images\sign-up-icon-hover.png" />
+    <Content Include="Content\images\sign-up-icon.png" />
+    <Content Include="Content\images\slider-arrow-left.png" />
+    <Content Include="Content\images\slider-arrow-right.png" />
+    <Content Include="Content\images\slider-img.jpg" />
+    <Content Include="Content\images\slider-img1.jpg" />
+    <Content Include="Content\images\timer.png" />
+    <Content Include="Content\images\twt.png" />
+    <Content Include="Content\images\visit-icon.png" />
+    <Content Include="Content\images\vs-icon-1.png" />
+    <Content Include="Content\images\vs-icon-2.png" />
+    <Content Include="Content\images\vs-icon-3.png" />
+    <Content Include="Content\images\vs-icon-4.png" />
+    <Content Include="Content\images\vs-icon-5.png" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-noscript.css" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-ui-noscript.css" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-ui.css" />
@@ -398,6 +456,9 @@
     <Content Include="Content\jQuery.FileUpload\img\loading.gif" />
     <Content Include="Content\jQuery.FileUpload\img\progressbar.gif" />
     <Content Include="Content\LetsEncryptSSLSettingsforAzure.png" />
+    <Content Include="Content\MusicImages\152910449263174156.jpg" />
+    <Content Include="Content\MusicImages\StudentAccountingScroller.jpg" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -449,6 +510,10 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-select.css.map" />
+    <Content Include="fonts\MyriadPro-Regular.eot" />
+    <Content Include="fonts\MyriadPro-Regular.otf" />
+    <Content Include="fonts\MyriadPro-Regular.woff" />
+    <Content Include="fonts\MyriadPro-Regular.woff2" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -460,6 +525,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <Content Include="fonts\Myriad Pro.css" />
+    <Content Include="fonts\MyriadPro-Regular.html" />
+    <Content Include="fonts\MyriadPro-Regular.svg" />
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap-select.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -620,11 +688,6 @@
     <Content Include="Views\District\Details.vbhtml" />
     <Content Include="Views\District\Edit.vbhtml" />
     <Content Include="Views\District\Index.vbhtml" />
-    <Content Include="Views\School\Create.vbhtml" />
-    <Content Include="Views\School\Delete.vbhtml" />
-    <Content Include="Views\School\Details.vbhtml" />
-    <Content Include="Views\School\Edit.vbhtml" />
-    <Content Include="Views\School\Index.vbhtml" />
     <Content Include="Views\MusicTypes\Create.vbhtml" />
     <Content Include="Views\MusicTypes\Delete.vbhtml" />
     <Content Include="Views\MusicTypes\Details.vbhtml" />
@@ -636,6 +699,17 @@
     <Content Include="Views\MusicParts\Edit.vbhtml" />
     <Content Include="Views\MusicParts\Index.vbhtml" />
     <Content Include="Views\Home\Privacy.vbhtml" />
+    <Content Include="Views\School\Create.vbhtml" />
+    <Content Include="Views\School\Delete.vbhtml" />
+    <Content Include="Views\School\Details.vbhtml" />
+    <Content Include="Views\School\Edit.vbhtml" />
+    <Content Include="Views\School\Index.vbhtml" />
+    <Content Include="Views\Libraries\Create.vbhtml" />
+    <Content Include="Views\Libraries\Delete.vbhtml" />
+    <Content Include="Views\Libraries\Details.vbhtml" />
+    <Content Include="Views\Libraries\Edit.vbhtml" />
+    <Content Include="Views\Libraries\Index.vbhtml" />
+    <Content Include="Views\Account\EditProfile.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

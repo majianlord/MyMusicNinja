@@ -22,7 +22,7 @@ Public Class HomeController
 
     Function Privacy() As ActionResult
 
-        Dim NinjaHelp As New Helpers
+        Dim NinjaHelp As New NinjaHelpers
         Dim results As NinjaResults
         results = NinjaHelp.sendEmail("majianlord@gmail.com", "Support@mymusicninja.com", "Test Web Email", "This is a Test of the email from the website")
         ViewData("Message") = results.ErrorMessage

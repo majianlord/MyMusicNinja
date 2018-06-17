@@ -50,7 +50,7 @@ Public Class ApplicationDbContext
     Public Property MusicPiecePartModels As System.Data.Entity.DbSet(Of MusicPiecePart)
 
     Public Property SchoolApplications As System.Data.Entity.DbSet(Of SchoolApplication)
-
-
+    Public Property Libraries As System.Data.Entity.DbSet(Of Library)
+    ' Public Property ApplicationUsers As System.Data.Entity.DbSet(Of ApplicationUser)
 
 End Class

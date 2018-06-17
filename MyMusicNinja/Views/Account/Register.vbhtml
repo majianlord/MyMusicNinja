@@ -13,6 +13,25 @@ End Code
     <h4>Create a new account.</h4>
     <hr />
     @Html.ValidationSummary("", New With {.class = "text-danger"})
+    
+    <div class="form-group">
+        @Html.LabelFor(Function(m) m.FirstName, New With {.class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextBoxFor(Function(m) m.FirstName, New With {.class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(Function(m) m.LastName, New With {.class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextBoxFor(Function(m) m.LastName, New With {.class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(Function(m) m.PhoneNumber, New With {.class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextBoxFor(Function(m) m.PhoneNumber, New With {.class = "form-control"})
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(Function(m) m.Email, New With {.class = "col-md-2 control-label"})
         <div class="col-md-10">
